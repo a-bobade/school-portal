@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="../records">Students Record</a>
+    <div class="dropdown">
+        <button class="dropbtn">Students Result</button>
+        <div class="dropdown-content">
+            <a href="../result-form">Upload Result</a>
+            <a href="../check-result">Check Result</a>
+        </div>
+    </div>
+    <div class="search-container">
+        <form method="get" action="../search">
+            <input type="text" placeholder="Enter Matric Number..." name="q">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+<div style="text-align: center">
+    <h1>Welcome to the school portal.</h1><br>
+    <h3>Education is the key to success.</h3><br>
+    <h3>Results on the go.</h3>
+</div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Student Result{% endblock %}
+{% block content %}
+
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="../records">Students Record</a>
+    <div class="dropdown">
+        <button class="dropbtn">Students Result</button>
+        <div class="dropdown-content">
+            <a href="../result-form">Upload Result</a>
+            <a href="../check-result">Check Result</a>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 50px">
+    <h2>Student Result</h2>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="alert alert-primary" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <table border="1" class="table">
+        <thead>
+        <tr style="text-align: center;">
+            <th>Matric No.</th>
+            <th>Course Code</th>
+            <th>CA Test</th>
+            <th>CA Test</th>
+            <th>Examination</th>
+            <th>Total Mark (%)</th>
+            <th>Level of Study</th>
+            <th>Semester</th>
+            <th>Session</th>
+            <th>No. of Time Taken</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for results in result %}
+        <tr style="text-align: center;">
+            <td>{{ results.matric }}</td>
+            <td>{{ results.code }}</td>
+            <td>{{ results.ca1 }}</td>
+            <td>{{ results.ca2 }}</td>
+            <td>{{ results.exam }}</td>
+            <td>{{ results.mark }}</td>
+            <td>{{ results.level }}</td>
+            <td>{{ results.semester }}</td>
+            <td>{{ results.session }}</td>
+            <td>{{ results.trials }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a type="submit" class="btn btn-primary" href="/check-result">Back</a>
+</div>
+
+{% endblock %}

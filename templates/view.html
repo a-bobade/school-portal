@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}View Student Record{% endblock %}
+{% block content %}
+
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="../records">Students Record</a>
+    <div class="dropdown">
+        <button class="dropbtn">Students Result</button>
+        <div class="dropdown-content">
+            <a href="../result-form">Upload Result</a>
+            <a href="../check-result">Check Result</a>
+        </div>
+    </div>
+    <div class="search-container">
+        <form method="get" action="../search">
+            <input type="text" placeholder="Enter Matric Number..." name="q">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 50px">
+    <h2>Student Details</h2>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td>Matric Number</td>
+            <td>{{ student.matric }}</td>
+        </tr>
+        <tr>
+            <td>Full Name</td>
+            <td>{{ student.lName.title }} {{ student.mName.title }} {{ student.fName.title }}</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>{{ student.gender }}</td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td>{{ student.dob }}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{ student.email }}</td>
+        </tr>
+        <tr>
+            <td>Course Applied For</td>
+            <td>{{ student.course.title }}</td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td>{{ student.dept.title }}</td>
+        </tr>
+        <tr>
+            <td>Faculty</td>
+            <td>{{ student.faculty.title }}</td>
+        </tr>
+        <tr>
+            <td>Entry Date</td>
+            <td>{{ student.entry }}</td>
+        </tr>
+        <tr>
+            <td>Exit Date</td>
+            <td>{{ student.exit }}</td>
+        </tr>
+        <tr>
+            <td>State of Origin</td>
+            <td>{{ student.state }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <a type="submit" class="btn btn-primary" href="/">Back</a>
+</div>
+
+{% endblock %}
