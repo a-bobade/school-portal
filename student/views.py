@@ -18,7 +18,7 @@ def search(request):
         student = Student.objects.get(matric=query)
     except:
         messages.error(request, 'No Record Found')
-        return redirect('/')
+        return redirect('/records')
     return render(request, 'view.html', {'student': student})
 
 
