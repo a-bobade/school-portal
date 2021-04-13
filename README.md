@@ -1,7 +1,7 @@
 # School Portal
 This is a School Management website.
 # Project website
-
+https://bobschool.herokuapp.com/
 # Project Summary
 The website displays students records. Records can be tracked, edited and deleted. \
 It shows the results of students, the results can as well be uploaded.
